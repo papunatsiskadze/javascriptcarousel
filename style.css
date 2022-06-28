@@ -1,4 +1,67 @@
+*,* ::before,** ::after{
+    box-sizing: border-box;
+}
+
 body{
     margin: 0;
+}
+
+.carousel{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.carousel > ul {
+    margin: 0;
     padding: 0;
+    list-style: none;
+}
+
+.slide{
+    position:absolute;
+    inset: 0;
+    opacity: 0;
+}
+
+.slide > img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.slide[data-active]{
+    opacity: 1;
+}
+
+button{
+    position: absolute;
+    z-index: 1;
+    background: none;
+    border: none;
+    top:50%;
+    font-size: 5rem;
+    transform:translateY(- 50%);
+    color: dimgrey;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 15px;
+    background-color: rgba(0,0,0, .1);
+}
+button :hover,
+button :focus{
+    color: white;
+    background-color: rgba(0,0,0, .2);
+}
+button :focus{
+    outline: 1px solid black;
+}
+
+button.previous{
+    left: 1rem;
+}
+
+button.next{
+    right: 1rem;
 }
